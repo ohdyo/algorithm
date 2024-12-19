@@ -23,7 +23,7 @@ def bfs(graph, n, m):
             nx = x + dx[i]
             ny = y + dy[i]
             if nx >= 0 and ny >= 0 and ny < n and nx < m:
-                if tmp[ny][nx] == 0:  # 빈 칸이면 바이러스 퍼뜨리기
+                if tmp[ny][nx] == 0:
                     tmp[ny][nx] = 2
                     queue.append((ny, nx))
 
@@ -31,24 +31,27 @@ def bfs(graph, n, m):
     result = 0
     for i in range(n):
         for j in range(m):
-            if tmp[i][j] == 0:  # 0이면 안전 구역
+            if tmp[i][j] == 0:
                 result += 1
-    max_result = max(result, max_result)  # 가장 큰 안전 영역 기록
+    max_result = max(result, max_result)
 
     return max_result
 
 
 # 벽 세우기
-def build(graph, n, m, cnt):
-    if cnt == 3:  # 벽을 3개 세운 경우
-        return bfs(graph, n, m)  # 바이러스 퍼뜨리기 후 결과 리턴
+def build(graph, n, m):
     max_result = 0
+    empty_spaces = []  # 벽을 세울 수 있는 위치들 저장
+
+    # 벽을 세울 수 있는 빈 칸의 좌표를 empty_spaces 리스트에 저장
     for i in range(n):
         for j in range(m):
-            if graph[i][j] == 0:  # 빈 칸에 벽을 세움
-                graph[i][j] = 1  # 벽 세우기
-                max_result = max(max_result, build(graph, n, m, cnt + 1))  # 벽을 더 세운 후, 최대 안전 영역 계산
-                graph[i][j] = 0  # 벽을 세운 곳을 다시 빈 칸으로 되돌리기
+            if graph[i][j] == 0:
+                empty_spaces.append((i, j))
+
+    # 3개의 벽을 세운 모든 경우를 계산
+
+
     return max_result
 
 
@@ -58,5 +61,5 @@ for i in range(n):
     graph.append(list(map(int, sys.stdin.readline().split())))  # 지도 정보 입력
 
 # 벽을 세운 후 가능한 최대 안전 영역을 계산
-max_result = build(graph, n, m, 0)
+max_result = build(graph, n, m)
 print(max_result)  # 최대로 구한 안전 영역 크기 출력
