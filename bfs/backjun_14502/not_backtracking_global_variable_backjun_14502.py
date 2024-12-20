@@ -6,11 +6,11 @@ dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
 
-# 바이러스 퍼뜨리기 및 최대 영역 크기 갱신
+#벽 3번 세웠으면 실행될 바이러스 전염을 위한 bfs 함수수
 def bfs(graph, n, m):
     max_result = 0
     queue = deque()
-    tmp = copy.deepcopy(graph)  # graph의 깊은 복사본을 만들어 tmp에 저장
+    tmp = copy.deepcopy(graph)  #! 백트래킹을 제거하기위한 임시 저장 tmp
 
     for i in range(n):
         for j in range(m):
@@ -25,7 +25,7 @@ def bfs(graph, n, m):
             if nx >= 0 and ny >= 0 and ny < n and nx < m:
                 if tmp[ny][nx] == 0:
                     tmp[ny][nx] = 2
-                    queue.append((ny, nx))
+                    queue.append((ny, nx)) #바이러스 전염 실행 반복문 및 큐 추가가
 
     # 바이러스가 퍼지고 나서, 안전 영역의 크기 계산
     result = 0
@@ -33,9 +33,9 @@ def bfs(graph, n, m):
         for j in range(m):
             if tmp[i][j] == 0:
                 result += 1
-    max_result = max(result, max_result)
+    max_result = max(result, max_result) # 최대값 갱신 함수수
 
-    return max_result
+    return max_result # 최대값 반환환
 
 
 # 벽 세우기
@@ -50,7 +50,7 @@ def build(graph, n, m):
                 empty_spaces.append((i, j))
 
     # 3개의 벽을 세운 모든 경우를 계산
-
+    
 
     return max_result
 
