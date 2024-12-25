@@ -3,6 +3,11 @@
 # 선생님의 입장에서 상 하 좌 우 끝까지 깊이 있게 탐색을 위해 dfs
 # 해당 경우는 최단의 경우보다 가능한 경우를 찾는거이에 dfs 활용
 
+# 코드 순서
+# 1. 벽 세우기 위한 함수 및 재귀함수로 구현(build_wall)
+# 2. 벽을 3번 세웠으면 결과 값 반환 함수 구현(find_result)
+# 3. 결과 값 반환에 필요한 조건에 대한 함수 구현(search_s)
+
 import sys
 
 #입력부
@@ -62,8 +67,10 @@ def build_wall(wall,graph):
         result = find_result(graph)
         if result == True:
             print('YES')
+            ## 코드 종료 함수
             exit()
         return
+
     for i in range(n):
         for j in range(n):
             if graph[i][j] == 'X':
