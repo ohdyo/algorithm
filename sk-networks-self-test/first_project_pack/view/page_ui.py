@@ -1,6 +1,8 @@
 import streamlit as st
 
 class PageUI:
+    # @이게 뭐지? 라 궁금하다면 인터넷이 저보다 더 잘 설명합니다.
+    # 
     @staticmethod
     def display_options():
         company = st.radio("브랜드를 선택하세요:", ["기아", "현대"])
