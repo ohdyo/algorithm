@@ -59,7 +59,7 @@ for index, row in df.iterrows():
         region_id = region_result[0]
 
     # 차량 데이터 삽입
-    car_counts = row[3:19].values
+    car_counts = row[3:15].values
     car_types = ['승용','승합','화물','특수']
         
     for i, count in enumerate(car_counts):
@@ -85,7 +85,7 @@ for index, row in df.iterrows():
         )
             
             
-    total_counts = row[19:23]
+    total_counts = row[15:18]
     for i, total in enumerate(total_counts):
         if isinstance(count, str) and '계' in count:
             continue
