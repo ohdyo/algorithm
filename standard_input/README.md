@@ -30,7 +30,7 @@
 ## 1. split()
   - 입력 값 사이의 띄어쓰기를 구분해서 문자열을 나눈다.
 ```python
-s = 'a, b, c, d, e, f'
+s = 'a b c d e f'
 r = s.split() #인자값을 입력하면 해당 인자를 기준으로 나눔
 print(f's.split() : {r}') #s.split() : ['a', 'b', 'c', 'd', 'e', 'f', ]
 ```
