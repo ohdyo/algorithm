@@ -77,11 +77,15 @@ print(data)
 - 간선은 지금 내가 있는 노드에서 다른 노드로 갈수 있게 해주는 다리
 ---
 ## 4. 노드별 연결된 해당 노드, 입출력
+<img width="275" src="https://velog.velcdn.com/images/khyun11/post/aa8cef39-7fa1-4ef2-b5d7-55ffad6eba43/image.png">
+
 ```python
 
 ```
 
 ## 5. 노드별 연결된 해당 노드,가중치 입출력 
+<img src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/upload/201007/tttttt.png">
+
 ```python
 
 ```
