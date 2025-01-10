@@ -57,16 +57,21 @@ print(data) # [1,2,3,4,5]
 ```python
 import sys
 
-read = sys.stdin.readline
-data = list(map(int, read().split()))
+input = sys.stdin.readline
+data = list(map(int, input().split()))
 print(data)
 ```
-## 2. 1차원 리스트에 입력값 저장
+## 2. 1차원 리스트에 입력값 저장 및 출력
 ```python
+# N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출력하는 프로그램을 작성하시오.
+# 첫째 줄에 숫자의 개수 N (1 ≤ N ≤ 100)이 주어진다. 둘째 줄에 숫자 N개가 공백없이 주어진다.
+# 입력으로 주어진 숫자 N개의 합을 출력
 
 ```
 ## 3. 2차원 리스트에 입력값 저장
 ```python
+# N = row 수
+# 구조가 행이 N개인 배열의 리스트 입출력
 
 ```
 
@@ -79,7 +84,30 @@ print(data)
 ## 4. 노드별 연결된 해당 노드, 입출력
 <img width="275" src="https://velog.velcdn.com/images/khyun11/post/aa8cef39-7fa1-4ef2-b5d7-55ffad6eba43/image.png">
 
+입력
 ```python
+# 입력부
+5 7
+0 1
+0 4
+1 2
+1 3
+1 4
+2 3
+3 4
+# 출력부
+[
+  [1, 4], # 0번쨰 노드와 연결된 다른 노드
+  [0, 2, 3, 4], # 1번쨰 노드와 연결된 다른 노드
+  [1,3,4], # 2번쨰 노드와 연결된 다른 노드
+  [1,2,4], # 3번쨰 노드와 연결된 다른 노드
+  [0,1,3] # 4번쨰 노드와 연결된 다른 노드
+]
+
+```
+
+```python
+# 인덱스 별 해당하는 노드와 인접하는 다른 노드들을 리스트로 출력
 
 ```
 
