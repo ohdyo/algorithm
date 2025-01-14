@@ -51,6 +51,39 @@ origin_list = [1,1,2,3,4,5]
 count_num = origin_list.count(1)
 print(count_num)
 ```
+### join()
+- 리스트에 담긴 값들을 특정구분자로 값을 구별해서 출력시켜줌
+```python
+origin_list = ['A', 'B', 'C', 'D']
+print(''.join(origin_list))
+second_origin_list = ['E','F','G','H']
+print('+'.join(second_origin_list))
+```
+
+### lambda(람다)
+- 함수와 비슷하게 사용된다.
+- 코드열에서 함수로 정의하지 않고 함수처럼 사용 가능하다.
+- 주로 입력받은 요소에 바로 적용시킬때 사용한다.
+```python
+lambda_list = list(map(lambda x:x * 2, map(int,input().split())))
+print(lambda_list)
+```
+
+### filter()
+- 리스트의 모든 요소 중에서 조건에 맞는 요소만을 반환
+```python
+filter_list = list(filter(lambda x: x%2 == 1,map(int,input().split())))
+print(filter_list)
+```
+
+### reduce()
+- functools모듈에서 가져와서 import를 진행해서 사용해야한다.
+- 누적 값에 대한 결과를 반환할때 사용한다.
+```python
+from functools import reduce
+reduce_result = reduce(lambda x,y : x * y, map(int,input().split()))
+print(reduce_result)
+```
 
 ### len(list)
 - 리스트의 길이
