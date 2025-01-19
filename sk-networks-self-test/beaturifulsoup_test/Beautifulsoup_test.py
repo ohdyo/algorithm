@@ -30,31 +30,31 @@ import time
 import pymysql
 
 #-- mysql
-conn = pymysql.connect(
-    host='localhost',
-    port=3306,
-    user='squirrel',
-    passwd='squirrel',
-    db='menudb',
-    charset='utf8'
-)
+# conn = pymysql.connect(
+#     host='localhost',
+#     port=3306,
+#     user='squirrel',
+#     passwd='squirrel',
+#     db='menudb',
+#     charset='utf8'
+# )
 
 # 연결한 DB의 커서역할하는 변수 , 커서에 sql문을 삽입하는 방식으로 사용 
-cur = conn.cursor()
-print(cur.connection.db)
-sql = 'select * from tbl_menu'
+# cur = conn.cursor()
+# print(cur.connection.db)
+# sql = 'select * from tbl_menu'
 
-#커서에 sql 삽입해서 실행
-cur.execute(sql)
-print(f'cur.rowcount = {cur.rowcount}')
+# #커서에 sql 삽입해서 실행
+# cur.execute(sql)
+# print(f'cur.rowcount = {cur.rowcount}')
 
-# sql 실행시키고 나온 튜플들을 변수 rows에 담음 
-# 그래서 row의 자료형(마우스 갖다대면 보임)은 tuple형식으로 변함
-rows = cur.fetchall()
-if not rows:
-    print('없음')
-else :
-    print(rows)
+# # sql 실행시키고 나온 튜플들을 변수 rows에 담음 
+# # 그래서 row의 자료형(마우스 갖다대면 보임)은 tuple형식으로 변함
+# rows = cur.fetchall()
+# if not rows:
+#     print('없음')
+# else :
+#     print(rows)
 
 # 현재 귀차니즘의 관계로 데이터를 추가,삭제는 구현 안함
 # 결과 값이 프린트 구문으로 나와요
