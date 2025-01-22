@@ -88,6 +88,20 @@ print(data)
 ```python
 # N = row 수
 # 구조가 행이 N개인 배열의 리스트 입출력
+# N = row 수
+# 구조가 행이 N개인 배열의 리스트 입출력
+import sys
+
+input = sys.stdin.readline
+
+N = int(input().strip())
+
+list_2d = []
+
+for i in range(N):
+    col_list = list(map(int, input().split()))
+    list_2d.append(col_list)
+print(list_2d)
 ```
 ---
 # 상급
@@ -104,6 +118,32 @@ print(data)
 9 10 11 12
 # 출력
 [10,1680, 42]
+import sys
+input = sys.stdin.readline
+
+# 정수 N과 M 입력받기
+N, M = map(int, input().split())
+
+# 2차원 리스트 입력받기
+list_2d = [list(map(int, input().split())) for _ in range(N)]
+
+# 결과를 저장할 리스트
+result = []
+
+# 홀수 행: 각 열의 합, 짝수 행: 각 열의 곱 계산
+for i in range(N):
+    if (i + 1) % 2 == 1:  # 홀수 행 (인덱스 기준 1부터 시작)
+        row_sum = sum(list_2d[i])
+        result.append(row_sum)
+    else:  # 짝수 행
+        row_product = 1
+        for num in list_2d[i]:
+            row_product *= num
+        result.append(row_product)
+
+# 결과 출력
+print(result)
+
 ```
 # 2. 데이터 필터링
 - 정수 N과 M을 입력받는다.
@@ -119,6 +159,23 @@ print(data)
 2 4
 6 8
 10 12
+# 정수 N과 M 입력받기
+import sys
+
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
+
+# 2차원 리스트 입력받기
+matrix = [list(map(int, input().split())) for _ in range(N)]
+
+# 결과 출력
+for row in matrix:
+    # 짝수만 남기기
+    even_numbers = [num for num in row if num % 2 == 0]
+    # 결과 출력
+    print(*even_numbers)
+
 ```
 # 3 행렬 회전
 - N을 입력받는다.
@@ -164,6 +221,22 @@ print(data)
   [1,2,4], # 3번쨰 노드와 연결된 다른 노드
   [0,1,3] # 4번쨰 노드와 연결된 다른 노드
 ]
+#
+import sys
+
+input = sys.stdin.readline
+
+# 입력 받기
+n, m = map(int, input().split())
+graph = [[] for _ in range(n + 1)]  # 노드 번호가 1부터 시작하므로 크기 n+1
+
+# 그래프 구성
+# 입력받은 값들을 인덱스의 번호를 노드로 삼아 해당 노드와 연결된 다른 노드들로 표현되도록 변경
+for _ in range(m):
+    u, v = map(int, input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+print(graph)
 
 ```
 
@@ -196,4 +269,17 @@ print(data)
   [(4, 1)], [(4, 7)], [(5, 15)],
   [(5, 4)], [(6, 6)], [(6, 10)]
 ]
+#
+import sys
+
+#입력부
+input = sys.stdin.readline
+
+n = int(input())
+graph = [[] for i in range(n+1)]
+for _ in range(n-1):
+    a,b,c = map(int,input().split())
+    graph[a].append((b,c))
+    graph[b].append((a,c))
+print(graph)
 ```
