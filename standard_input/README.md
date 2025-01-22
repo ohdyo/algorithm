@@ -228,7 +228,7 @@ input = sys.stdin.readline
 
 # 입력 받기
 n, m = map(int, input().split())
-graph = [[] for _ in range(n + 1)]  # 노드 번호가 1부터 시작하므로 크기 n+1
+graph = [[] for _ in range(n)] 
 
 # 그래프 구성
 # 입력받은 값들을 인덱스의 번호를 노드로 삼아 해당 노드와 연결된 다른 노드들로 표현되도록 변경
